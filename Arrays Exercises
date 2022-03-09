@@ -1,0 +1,52 @@
+/*
+
+Hacer programa que acepte como entrada un conjunto de números enteros
+hasta que se introduzca el valor -1 el programa debe mostrar como salida.
+      La cantidad de:
+      a) Números pares:
+      b) Numero impares:
+      c) El valor mayor introducido
+      d) El valor menor introducido
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[1000];
+    int n;
+    int mayor;
+    int menor;
+    cout << "Introduzca n numeros: ";
+    cin >> n;
+    
+    for (int i = 0; i < n; i++){
+    cout << "Introduzca el elemento N° " << i + 1 <<": ";
+    cin >> arr[i];
+    
+    if(arr[i] > mayor){ mayor = arr[i]; }
+    if(arr[i] < menor && arr[i] != -1){ menor = arr[i]; }
+    if ( arr[i] == -1){
+        break;
+    }
+        
+    }
+    cout << "Los numeros pares son: ";
+     for (int i = 0; i < n; i++){
+         if(arr[i] % 2 == 0){
+             cout << "[" << arr[i] << "] ";
+         }
+    
+    }
+    cout << "\nLos numeros impares son: ";
+    for (int i = 0; i < n; i++){
+         if(arr[i] % 2 != 0){
+             cout << "[" << arr[i] << "] ";
+         }
+    }
+    cout << "\nEl mayor dato introducido: " << mayor << endl;
+    cout << "El menor dato introducido: " << menor << endl;
+
+    return 0;
+
+}
